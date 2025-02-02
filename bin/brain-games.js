@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import { greetings } from '../src/cli.js';
+import { getAnswer } from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-
-console.log(greetings());
-
-
+export let name = '';
+export const greetings = () => {
+  console.log('Welcome to the Brain Games!');
+  name = getAnswer('May I have your name?  ');
+  console.log(`Hello, ${name}`);
+};
