@@ -22,18 +22,4 @@ export const gameEven = () => {
         console.log(`Congratulations, ${name}!`);        // return true;
 
     };
-}
-// gameMechanic(isEven(getRandomNumber(0, 100)), getAnswer('Your answer: '));
-// }
-// greetings();
-// console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-// export let question = 0
-// const isEven = (number) => {
-//     question = number;
-//     return number % 2 === 0 ? "yes" : "no"; 
-// };
-
-// gameMechanic(isEven(getRandomNumber(0, 100)), getAnswer('Your answer: '));
-
-// export default even;
+};
