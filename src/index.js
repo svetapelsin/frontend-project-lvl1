@@ -1,43 +1,29 @@
-// import { question } from 'readline-sync';
-import { name } from '../bin/brain-games.js';
-import { getAnswer } from './cli.js';
-//import { question } from './game/even.js';
-//import { randomNumber } from './game/even.js';
+import readlineSync from 'readline-sync';
+import { greetUser, congratulateUser } from './cli.js';
 
-// export const gameMechanic = (question, userAnswer, correctAnswer) => {
-//    let i = 0;
-//    let isWin = true;
-//    while (i < 3) {
-//         console.log(`Question: ${question}`);
-//         if (correctAnswer === userAnswer) {
-//             console.log('Correct!');
-//             i += 1;
-//         } else {
-//             console.log(`'${userAnswer}'is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}`);
-//             isWin = false;
-//             i = 3;
-//         }
-//     }
-//     if (isWin) {
-//         console.log(`Congratulations, ${name}!`);
-//     };
-// }
-export const progressOfGame = (question, correctAnswer) => {
+const runGame = (description, generateQuestion) => {
+  const userName = greetUser();
+  console.log(description);
+
+  const roundsCount = 3;
+
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [question, correctAnswer] = generateQuestion();
     console.log(`Question: ${question}`);
-    let userAnswer = getAnswer('Your answer: ');
-    let isCorrect = true;
-    if (correctAnswer === userAnswer) {
-        console.log('Correct!');
-        // return true;
-        //i += 1;
-    } else {
-        console.log(`'${userAnswer}'is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}`);
-        isCorrect = false;
-        // return false;
-    };
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    return isCorrect;
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+
+    console.log('Correct!');
+  }
+
+  congratulateUser(userName);
 };
 
+export default runGame;
 
 
