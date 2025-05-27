@@ -10,13 +10,13 @@ const generateCalcQuestion = () => {
   switch (operator) {
     case '+':
       correctAnswer = num1 + num2
-      break;
+      break
     case '-':
       correctAnswer = num1 - num2
-      break;
+      break
     case '*':
       correctAnswer = num1 * num2
-      break;
+      break
     default:
       correctAnswer = ''
   }
