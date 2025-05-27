@@ -9,4 +9,3 @@ export const greetUser = () => {
 export const congratulateUser = (userName) => {
   console.log(`Congratulations, ${userName}!`)
 }
-
