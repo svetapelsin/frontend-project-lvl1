@@ -1,10 +1,10 @@
-import runGame from '../index.js';
+import runGame from '../index.js'
 
 const isPrime = (number) => {
   if (number < 2) return false
   for (let i = 2, sqrt = Math.sqrt(number); i <= sqrt; i += 1) {
     if (number % i === 0) return false
-  }  
+  }
   return true
 }
 

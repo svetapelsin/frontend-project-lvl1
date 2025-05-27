@@ -24,4 +24,4 @@ const runGame = (description, generateQuestion) => {
   congratulateUser(userName)
 }
 
-export default runGame;
+export default runGame
